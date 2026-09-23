@@ -1,0 +1,45 @@
+name: Fetch Internship Posts
+
+on:
+  schedule:
+    # every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run fetcher
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python fetch_jobs.py
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "internship-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/index.html data/posts.json data/seen.json
+          if ! git diff --quiet --cached; then
+            git commit -m "Update internship listings"
+            git pull --rebase origin main
+            git push
+          fi
