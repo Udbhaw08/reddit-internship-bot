@@ -26,35 +26,110 @@ import os
 import json
 import time
 import html
+import re
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
 # ---------- Configuration ----------
 
-SUBREDDITS = [
-    "internships",
+DEFAULT_SUBREDDITS = [
+    "forhire",
     "hiring",
+    "jobbit",
     "remotejobs",
     "MachineLearningJobs",
     "developersIndia",
-    "csMajors",
-    "cscareerquestions",
-    "jobbit",
+    "freelance_forhire",
+    "techjobs",
+    "AIJobs",
+    "RemotePython",
+    "internships",
 ]
 
-MUST_HAVE = ["internships","hiring"]
+env_subs = os.environ.get("SUBREDDITS")
+SUBREDDITS = [s.strip() for s in env_subs.split(",") if s.strip()] if env_subs else DEFAULT_SUBREDDITS
 
-ROLE_KEYWORDS = [
-    "full stack", "fullstack", "full-stack",
-    "backend", "back-end", "back end",
-    "ai agent", "ai-agent", "agentic",
-    "machine learning", " ml ", "ml engineer", "mlops", "ml ops",
-    "computer vision", "cv engineer",
-    "deep learning",
-    "python developer",
-    "llm", "genai", "generative ai",
+# Negative disqualifiers: people seeking work, resume critiques, discussions, advice, questions
+EXCLUDE_PATTERNS = [
+    r'\[for\s*hire\]',
+    r'\(for\s*hire\)',
+    r'\bfor\s*hire\b',
+    r'\bhire\s*me\b',
+    r'\bavailable\s+for\s+hire\b',
+    r'\bopen\s+to\s+work\b',
+    r'\blooking\s+for\s+(a\s+)?(job|internship|internships|work|role|mentor|guidance)\b',
+    r'\bseeking\s+(a\s+)?(job|internship|internships|work|role|opportunity)\b',
+    r'\bin\s+search\s+of\b',
+    r'\bneed\s+(a\s+)?(job|internship)\b',
+    r'\b(rate|roast|review)\s+my\s+resume\b',
+    r'\bresume\s+(review|critique|roast)\b',
+    r'\bask\s+me\s+anything\b',
+    r'\bama\b',
+    r'\bhow\s+(to|do\s+i|can\s+i|did\s+you)\b',
+    r'\bwhich\s+(sites|companies|platforms|courses)\b',
+    r'\bwhat\s+(to\s+do|should\s+i|is\s+the\s+best)\b',
+    r'\bany\s+(advice|tips|suggestions|recommendations)\b',
+    r'\bgot\s+rejected\b',
+    r'\brejections?\b',
+    r'\bcleared\s+genc\b',
 ]
+
+# Positive hiring signals: tags or phrases proving an employer/recruiter is actively hiring
+HIRING_SIGNALS = [
+    r'\[hiring\]',
+    r'\(hiring\)',
+    r'\{hiring\}',
+    r'\bhiring\b',
+    r'\bwe(\x27re|\x92re|\x27re|\s+are)\s+hiring\b',
+    r'\bis\s+hiring\b',
+    r'\burgently\s+hiring\b',
+    r'\b(job|internship|intern)\s+(opening|openings|opportunity|opportunities)\b',
+    r'\b(looking\s+to\s+hire|wanted)\b',
+    r'\bpaid\s+internship\b',
+    r'\bstipend\b',
+    r'(\$|usd|inr|rs\.?|eur|£)\s*\d+',
+    r'\d+\s*(usd|eur|inr|k|\/hr|\/hour|\/mo|\/month)\b',
+]
+
+# Role / Tech keywords: AI, ML, SWE, Full Stack, Backend, Python, etc.
+ROLE_PATTERNS = [
+    r'\bfull\s*stack\b',
+    r'\bfullstack\b',
+    r'\bbackend\b',
+    r'\bback\s*end\b',
+    r'\bfrontend\b',
+    r'\bfront\s*end\b',
+    r'\bweb\s*dev(eloper)?\b',
+    r'\bsoftware\s*(engineer|developer|engineering)\b',
+    r'\bswe\b',
+    r'\bdeveloper\b',
+    r'\bprogrammer\b',
+    r'\bai\b',
+    r'\bai\s*agent(ic)?\b',
+    r'\bagentic\b',
+    r'\bmachine\s*learning\b',
+    r'\bml\b',
+    r'\bmlops\b',
+    r'\bcomputer\s*vision\b',
+    r'\bdeep\s*learning\b',
+    r'\bpython\b',
+    r'\bllm\b',
+    r'\bgenai\b',
+    r'\bgenerative\s*ai\b',
+    r'\bai\s*(evaluator|trainer|training)\b',
+    r'\bdata\s*scien(ce|tist)\b',
+    r'\bnlp\b',
+    r'\bintern(ship)?\b',
+]
+
+# Dedicated job boards where every post is an employer job listing
+DEDICATED_JOB_SUBS = {
+    'machinelearningjobs',
+    'aijobs',
+    'techjobs',
+    'remotepython',
+}
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "docs")
@@ -88,12 +163,30 @@ def save_json(path, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def matches_filters(title, selftext):
-    text = f"{title} {selftext}".lower()
-    if not any(k in text for k in MUST_HAVE):
+def matches_filters(title, selftext="", subreddit=""):
+    t_title = title.lower()
+    t_all = f"{title} {selftext}".lower()
+
+    # 1. Negative Disqualifiers: Candidate looking for work, questions, resume reviews, advice
+    for pat in EXCLUDE_PATTERNS:
+        if re.search(pat, t_title):
+            return False
+
+    # If title contains question mark without an explicit [hiring] tag, it's a discussion/question
+    if "?" in t_title and not any(re.search(p, t_title) for p in [r'\[hiring\]', r'\bhiring\b', r'\bwe(\x27re|\s+are)\s+hiring\b']):
         return False
-    if not any(k in text for k in ROLE_KEYWORDS):
+
+    # 2. Positive Hiring Signals: Must be an employer/recruiter offering a job/internship
+    is_job_board = subreddit.lower() in DEDICATED_JOB_SUBS
+    has_hiring_signal = any(re.search(pat, t_title) for pat in HIRING_SIGNALS)
+    if not (has_hiring_signal or is_job_board):
         return False
+
+    # 3. Role Keywords: Must match targeted tech/AI/developer roles
+    has_role = any(re.search(pat, t_all) for pat in ROLE_PATTERNS)
+    if not has_role:
+        return False
+
     return True
 
 
@@ -343,7 +436,7 @@ def main():
             raw_posts = fetch_subreddit_rss(sub)
 
         for p in raw_posts:
-            if not p.get("id") or not matches_filters(p["title"], p.get("selftext", "")):
+            if not p.get("id") or not matches_filters(p["title"], p.get("selftext", ""), sub):
                 continue
             all_posts[p["id"]] = {
                 "id": p["id"],
@@ -368,7 +461,7 @@ def main():
     print(f"Found {len(new_matches)} new matching post(s) via {source}.")
     for p in new_matches:
         safe_title = html.escape(p["title"])
-        msg = f"🆕 <b>{safe_title}</b>\nr/{p['subreddit']}\n{p['permalink']}"
+        msg = f"💼 <b>{safe_title}</b>\n\n📍 Community: <b>r/{p['subreddit']}</b>\n🔗 <a href=\"{p['permalink']}\">View &amp; Apply on Reddit &rarr;</a>"
         send_telegram(msg)
 
     print("Done.")
