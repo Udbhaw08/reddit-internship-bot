@@ -1,6 +1,75 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Internship & Tech Job Finder Dashboard</title></head>
-<body style="font-family:sans-serif;background:#0f1115;color:#e8e9ec;padding:40px;text-align:center;">
-<h1>Internship & Tech Job Finder</h1>
-<p>Updating with verified hiring posts on the next cycle...</p>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internship Finder Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1115; --card: #171a21; --text: #e8e9ec; --muted: #9aa0ab;
+    --accent: #7dd3fc; --border: #262a33;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 16px 60px; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .filters input {
+    flex: 1; min-width: 200px; padding: 10px 12px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--card); color: var(--text); font-size: 0.95rem;
+  }
+  .count { color: var(--muted); font-size: 0.85rem; margin-bottom: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 10px;
+  }
+  .card a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 1rem; }
+  .card a:hover { text-decoration: underline; }
+  .meta { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
+  .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+</style>
+</head>
+<body>
+  <h1>Internship Finder</h1>
+  <div class="sub">Auto-updated from Reddit &middot; last run: 23 Sep 2026, 20:17 UTC &middot; source: RSS (public feeds, no auth)</div>
+  <div class="filters">
+    <input id="search" type="text" placeholder="Filter by keyword (e.g. backend, MLOps, remote)...">
+  </div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+
+  <script>
+    const posts = [{"title": "[Hiring] [Remote] [Americas and more] - 2 Full Remote jobs at tech companies - Sep 23, 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wo3z2k/hiring_remote_americas_and_more_2_full_remote/", "subreddit": "techjobs", "date": "23 Sep 2026"}, {"title": "[Hiring] (Online) Bilingual Chinese-English speakers for AI training (up to $20/hour)", "url": "https://www.reddit.com/r/forhire/comments/1wo2rbw/hiring_online_bilingual_chineseenglish_speakers/", "subreddit": "forhire", "date": "23 Sep 2026"}, {"title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 income tax free tech jobs - 22 September 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wnoul8/hiring_hybrid_dubai_uae_saudi_arabia_20_income/", "subreddit": "techjobs", "date": "22 Sep 2026"}, {"title": "[Hiring] [Remote] [USA] - Member of Technical Staff, Frontier AI & Enterprise AI | $100-$130/hr", "url": "https://www.reddit.com/r/techjobs/comments/1wnorgy/hiring_remote_usa_member_of_technical_staff/", "subreddit": "techjobs", "date": "22 Sep 2026"}, {"title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 tax-free tech jobs - 21 September 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wmscek/hiring_hybrid_dubai_uae_saudi_arabia_20_taxfree/", "subreddit": "techjobs", "date": "21 Sep 2026"}, {"title": "[Hiring] [Hybrid] [US] - 30+ Tech jobs that opened this week (remote, hybrid)", "url": "https://www.reddit.com/r/techjobs/comments/1wmnqyl/hiring_hybrid_us_30_tech_jobs_that_opened_this/", "subreddit": "techjobs", "date": "21 Sep 2026"}, {"title": "[Hiring] [Remote] [Worldwide] - Sr. Full-Stack Software Engineer. $50 - $100/hr", "url": "https://www.reddit.com/r/techjobs/comments/1wmcvkf/hiring_remote_worldwide_sr_fullstack_software/", "subreddit": "techjobs", "date": "21 Sep 2026"}, {"title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 tech jobs in income tax-free places - 20 September 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wlvod7/hiring_hybrid_dubai_uae_saudi_arabia_20_tech_jobs/", "subreddit": "techjobs", "date": "20 Sep 2026"}, {"title": "[Hiring] [Onsite] [India] - Frontend Developer Intern", "url": "https://www.reddit.com/r/techjobs/comments/1wlkadx/hiring_onsite_india_frontend_developer_intern/", "subreddit": "techjobs", "date": "20 Sep 2026"}, {"title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 tech jobs in income tax-free places - 19 September 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wl0af5/hiring_hybrid_dubai_uae_saudi_arabia_20_tech_jobs/", "subreddit": "techjobs", "date": "19 Sep 2026"}, {"title": "[Hiring] [Remote] [Worldwide and more] - 6 Full Remote jobs at tech companies - Sep 19, 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wkc940/hiring_remote_worldwide_and_more_6_full_remote/", "subreddit": "techjobs", "date": "19 Sep 2026"}, {"title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 tech jobs in income tax-free places - 18 September 2026", "url": "https://www.reddit.com/r/techjobs/comments/1wk591v/hiring_hybrid_dubai_uae_saudi_arabia_20_tech_jobs/", "subreddit": "techjobs", "date": "18 Sep 2026"}, {"title": "[Hiring] [Remote] [India] - Full Stack Software Intern | ₹30,000/month", "url": "https://www.reddit.com/r/techjobs/comments/1wju25k/hiring_remote_india_full_stack_software_intern/", "subreddit": "techjobs", "date": "18 Sep 2026"}, {"title": "[Hiring] [Onsite] [Germany] - Senior Backend Engineer - Sorting (all genders) (all genders) - in Hamburg or Berlin", "url": "https://www.reddit.com/r/techjobs/comments/1wjnnvb/hiring_onsite_germany_senior_backend_engineer/", "subreddit": "techjobs", "date": "18 Sep 2026"}];
+
+    const list = document.getElementById('list');
+    const search = document.getElementById('search');
+    const count = document.getElementById('count');
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text || '';
+      return div.innerHTML;
+    }
+
+    function render(filter) {
+      const f = (filter || '').toLowerCase();
+      const filtered = posts.filter(p =>
+        (p.title + ' ' + p.subreddit).toLowerCase().includes(f)
+      );
+      count.textContent = filtered.length + ' openings';
+      list.innerHTML = filtered.length ? filtered.map(p => `
+        <div class="card">
+          <a href="${escapeHtml(p.url)}" target="_blank" rel="noopener">${escapeHtml(p.title)}</a>
+          <div class="meta">r/${escapeHtml(p.subreddit)} &middot; ${escapeHtml(p.date)}</div>
+        </div>
+      `).join('') : '<div class="empty">No matching posts yet.</div>';
+    }
+
+    search.addEventListener('input', () => render(search.value));
+    render('');
+  </script>
+</body>
+</html>
