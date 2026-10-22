@@ -105,34 +105,6 @@
     "created_utc": 1790105315.0
   },
   {
-    "id": "t3_1wn7086",
-    "title": "Spain: free tech/ML-friendly job fairs in Málaga & Alicante (15 Oct)",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wn7086/spain_free_techmlfriendly_job_fairs_in_málaga/",
-    "created_utc": 1790076915.0
-  },
-  {
-    "id": "t3_1wn4dhh",
-    "title": "Want career shift in AI",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wn4dhh/want_career_shift_in_ai/",
-    "created_utc": 1790068203.0
-  },
-  {
-    "id": "t3_1wn44by",
-    "title": "Changing Careers from ESL Teaching to AI Engineer",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wn44by/changing_careers_from_esl_teaching_to_ai_engineer/",
-    "created_utc": 1790067310.0
-  },
-  {
-    "id": "t3_1wn3jv6",
-    "title": "Entry-Level ML/AI Engineer | Python | RAG | FastAPI | MLOps | India/Remote",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wn3jv6/entrylevel_mlai_engineer_python_rag_fastapi_mlops/",
-    "created_utc": 1790065176.0
-  },
-  {
     "id": "t3_1woqy0q",
     "title": "[Hiring] Remote finance/consulting experts for AI model evaluation — US, $100–$150/hr",
     "subreddit": "forhire",
@@ -2574,5 +2546,12 @@
     "subreddit": "hiring",
     "permalink": "https://www.reddit.com/r/hiring/comments/1xbuluj/hiring_customer_support_specialist_remote_usonly/",
     "created_utc": 1792605951.0
+  },
+  {
+    "id": "t3_1xcb5t2",
+    "title": "[Hiring] Web Developer Needed to Build a Website — $50 Budget",
+    "subreddit": "forhire",
+    "permalink": "https://www.reddit.com/r/forhire/comments/1xcb5t2/hiring_web_developer_needed_to_build_a_website_50/",
+    "created_utc": 1792650887.0
   }
 ]
