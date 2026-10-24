@@ -1,24 +1,10 @@
 [
   {
-    "id": "t3_1wpa375",
-    "title": "[Hiring] Product & Merch Designer — Long Beach, CA (On-site) — $85,000–$110,000/yr + benefits",
-    "subreddit": "forhire",
-    "permalink": "https://www.reddit.com/r/forhire/comments/1wpa375/hiring_product_merch_designer_long_beach_ca/",
-    "created_utc": 1790275691.0
-  },
-  {
     "id": "t3_1wpfaa0",
     "title": "I'm building an LLM inference engine in Rust as an \"executable book\"",
     "subreddit": "MachineLearningJobs",
     "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wpfaa0/im_building_an_llm_inference_engine_in_rust_as_an/",
     "created_utc": 1790288042.0
-  },
-  {
-    "id": "t3_1wp7qdm",
-    "title": "[HIRING] AI/ML Engineers | NYC, SF, or Remote US | $150K-$300K base",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wp7qdm/hiring_aiml_engineers_nyc_sf_or_remote_us/",
-    "created_utc": 1790270453.0
   },
   {
     "id": "t3_1wq6bvg",
@@ -2483,5 +2469,61 @@
     "subreddit": "forhire",
     "permalink": "https://www.reddit.com/r/forhire/comments/1xe7uwq/hiring_english_to_japanese_translation_of_manga/",
     "created_utc": 1792846292.0
+  },
+  {
+    "id": "t3_1xe8bhe",
+    "title": "[Hiring] [Remote] [Europe Only] - Junior Technical Project Manager (Task Management, Executive Assistance, AI, Automation and Operations) (Neg/month)",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xe8bhe/hiring_remote_europe_only_junior_technical/",
+    "created_utc": 1792847546.0
+  },
+  {
+    "id": "t3_1xe2gmm",
+    "title": "[Hiring] [Remote] [Global] - Applied Scientists - Machine Learning (MSc or PhD)",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xe2gmm/hiring_remote_global_applied_scientists_machine/",
+    "created_utc": 1792827486.0
+  },
+  {
+    "id": "t3_1xdsqns",
+    "title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 income tax free tech jobs - 23 October 2026",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xdsqns/hiring_hybrid_dubai_uae_saudi_arabia_20_income/",
+    "created_utc": 1792796403.0
+  },
+  {
+    "id": "t3_1xdg3wx",
+    "title": "[Hiring] [Onsite] [US / Colorado] - SSD / Hardware Validation Engineers ($55–$85/hr)",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xdg3wx/hiring_onsite_us_colorado_ssd_hardware_validation/",
+    "created_utc": 1792766870.0
+  },
+  {
+    "id": "t3_1xde9y8",
+    "title": "[Hiring] [Remote] [US] - 4 remote tech roles with the salary listed, from a $74K entry-level SWE to a $145K data engineer",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xde9y8/hiring_remote_us_4_remote_tech_roles_with_the/",
+    "created_utc": 1792762655.0
+  },
+  {
+    "id": "t3_1xddr2h",
+    "title": "[Hiring] [Remote] [Location] - Python/Django Backend Engineer (REST APIs for Mobile and Web) (Neg/month)",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xddr2h/hiring_remote_location_pythondjango_backend/",
+    "created_utc": 1792761363.0
+  },
+  {
+    "id": "t3_1xd36fw",
+    "title": "[Hiring] [Remote] [Worldwide] - AI Trainer - Video Annotation at iMerit Technology (💸 70K-80K)",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xd36fw/hiring_remote_worldwide_ai_trainer_video/",
+    "created_utc": 1792726149.0
+  },
+  {
+    "id": "t3_1xcxiqe",
+    "title": "[Hiring] [Hybrid] [Dubai / UAE / Saudi Arabia] - 20 zero-tax tech jobs - 22 October 2026",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xcxiqe/hiring_hybrid_dubai_uae_saudi_arabia_20_zerotax/",
+    "created_utc": 1792710002.0
   }
 ]
