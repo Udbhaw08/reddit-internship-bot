@@ -1,19 +1,5 @@
 [
   {
-    "id": "t3_1wweokd",
-    "title": "[Hiring] full stack web developer",
-    "subreddit": "forhire",
-    "permalink": "https://www.reddit.com/r/forhire/comments/1wweokd/hiring_full_stack_web_developer/",
-    "created_utc": 1791003719.0
-  },
-  {
-    "id": "t3_1wwbxo4",
-    "title": "[hiring] How do you tell who’s actually good when candidates are using AI?",
-    "subreddit": "hiring",
-    "permalink": "https://www.reddit.com/r/hiring/comments/1wwbxo4/hiring_how_do_you_tell_whos_actually_good_when/",
-    "created_utc": 1790994591.0
-  },
-  {
     "id": "t3_1wwtinr",
     "title": "[Hiring] Business & Marketing Partner for AI Engineering Studio - Remote",
     "subreddit": "forhire",
@@ -82,13 +68,6 @@
     "subreddit": "MachineLearningJobs",
     "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wwoswo/ypt_server_for_aiml_learners/",
     "created_utc": 1791038205.0
-  },
-  {
-    "id": "t3_1wwfkjz",
-    "title": "Choosing between Federated Learning and Model Compression for an industry-oriented Master's research project",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wwfkjz/choosing_between_federated_learning_and_model/",
-    "created_utc": 1791006898.0
   },
   {
     "id": "t3_1wxc6xy",
@@ -2441,5 +2420,54 @@
     "subreddit": "AIJobs",
     "permalink": "https://www.reddit.com/r/AIJobs/comments/1xkggfy/4_remote_ai_jobs_at_turing_this_week_from/",
     "created_utc": 1793468554.0
+  },
+  {
+    "id": "t3_1xlp5dq",
+    "title": "Looking for Remote Opportunities",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xlp5dq/looking_for_remote_opportunities/",
+    "created_utc": 1793598203.0
+  },
+  {
+    "id": "t3_1xlop84",
+    "title": "Data Science Project idea's",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xlop84/data_science_project_ideas/",
+    "created_utc": 1793596657.0
+  },
+  {
+    "id": "t3_1xl7mp0",
+    "title": "For future",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xl7mp0/for_future/",
+    "created_utc": 1793551088.0
+  },
+  {
+    "id": "t3_1xl6umh",
+    "title": "BTech 2nd Year AIML Student Looking for Remote Work Opportunities – Open to Internships, Freelance Projects or Part-Time Jobs",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xl6umh/btech_2nd_year_aiml_student_looking_for_remote/",
+    "created_utc": 1793549223.0
+  },
+  {
+    "id": "t3_1xl3y17",
+    "title": "[Hiring] Senior ML Engineer, fully remote in Europe, $4-5k/month, direct from the founder",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xl3y17/hiring_senior_ml_engineer_fully_remote_in_europe/",
+    "created_utc": 1793542043.0
+  },
+  {
+    "id": "t3_1xkpnpb",
+    "title": "[Hiring] ML + AI Engineers | NYC, SF, or Remote US | $150K-400K base",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xkpnpb/hiring_ml_ai_engineers_nyc_sf_or_remote_us/",
+    "created_utc": 1793492894.0
+  },
+  {
+    "id": "t3_1xkgfy2",
+    "title": "4 Remote AI Jobs at Turing This Week, From $25-an-Hour Raters to Project Leads",
+    "subreddit": "MachineLearningJobs",
+    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xkgfy2/4_remote_ai_jobs_at_turing_this_week_from/",
+    "created_utc": 1793468523.0
   }
 ]
