@@ -7,13 +7,6 @@
     "created_utc": 1791152540.0
   },
   {
-    "id": "t3_1wxjmnk",
-    "title": "Looking for AI/ML Opportunities in India",
-    "subreddit": "MachineLearningJobs",
-    "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1wxjmnk/looking_for_aiml_opportunities_in_india/",
-    "created_utc": 1791130732.0
-  },
-  {
     "id": "t3_1wydhx4",
     "title": "[Hiring] Having a hard time finding the right engineer for an AI project — remote US/Canada, $100–$150/hr",
     "subreddit": "forhire",
@@ -2455,5 +2448,12 @@
     "subreddit": "RemotePython",
     "permalink": "https://www.reddit.com/r/remotepython/comments/1xm570x/fullstack_developer_websites_web_apps_custom/",
     "created_utc": 1793644072.0
+  },
+  {
+    "id": "t3_1xmyz1d",
+    "title": "Built a 7-stage ETL pipeline in Python to parse and clean 550k+ MHT-CET admission records from raw PDFs",
+    "subreddit": "developersIndia",
+    "permalink": "https://www.reddit.com/r/developersIndia/comments/1xmyz1d/built_a_7stage_etl_pipeline_in_python_to_parse/",
+    "created_utc": 1793726367.0
   }
 ]
