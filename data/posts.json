@@ -1,47 +1,5 @@
 [
   {
-    "id": "t3_1wydhx4",
-    "title": "[Hiring] Having a hard time finding the right engineer for an AI project — remote US/Canada, $100–$150/hr",
-    "subreddit": "forhire",
-    "permalink": "https://www.reddit.com/r/forhire/comments/1wydhx4/hiring_having_a_hard_time_finding_the_right/",
-    "created_utc": 1791218698.0
-  },
-  {
-    "id": "t3_1wycglk",
-    "title": "[HIRING] Experienced Ad Copywriter — $15-25/hr (Contract/Part-Time)",
-    "subreddit": "forhire",
-    "permalink": "https://www.reddit.com/r/forhire/comments/1wycglk/hiring_experienced_ad_copywriter_1525hr/",
-    "created_utc": 1791216313.0
-  },
-  {
-    "id": "t3_1wye0ru",
-    "title": "[HIRING] US English speakers | $150–$200 | Remote and Freelance",
-    "subreddit": "hiring",
-    "permalink": "https://www.reddit.com/r/hiring/comments/1wye0ru/hiring_us_english_speakers_150200_remote_and/",
-    "created_utc": 1791219895.0
-  },
-  {
-    "id": "t3_1wycsbe",
-    "title": "[Hiring] Experienced Ad Copywriter | Contract/Part-Time | $15-25/hr",
-    "subreddit": "hiring",
-    "permalink": "https://www.reddit.com/r/hiring/comments/1wycsbe/hiring_experienced_ad_copywriter_contractparttime/",
-    "created_utc": 1791217049.0
-  },
-  {
-    "id": "t3_1wycllo",
-    "title": "[Hiring] Client Engagement Coordinator | Remote, North America | $24–$28 USD/hour",
-    "subreddit": "hiring",
-    "permalink": "https://www.reddit.com/r/hiring/comments/1wycllo/hiring_client_engagement_coordinator_remote_north/",
-    "created_utc": 1791216620.0
-  },
-  {
-    "id": "t3_1wyc2q4",
-    "title": "We are looking for SEO and Design Interns for a Paid Internship with opportunity to convert to a job.",
-    "subreddit": "internships",
-    "permalink": "https://www.reddit.com/r/internships/comments/1wyc2q4/we_are_looking_for_seo_and_design_interns_for_a/",
-    "created_utc": 1791215467.0
-  },
-  {
     "id": "t3_1wywtkc",
     "title": "[HIRING] LLM Engineering Expert / AI Evaluation Engineer — Remote | $500/task",
     "subreddit": "forhire",
@@ -145,20 +103,6 @@
     "subreddit": "AIJobs",
     "permalink": "https://www.reddit.com/r/AIJobs/comments/1wz8vdv/hiring_looking_for_russian_english_localization/",
     "created_utc": 1791308238.0
-  },
-  {
-    "id": "t3_1wycykp",
-    "title": "[HIRING] Paid US English Voice Project | $150–$200 | Remote - Freelance",
-    "subreddit": "AIJobs",
-    "permalink": "https://www.reddit.com/r/AIJobs/comments/1wycykp/hiring_paid_us_english_voice_project_150200/",
-    "created_utc": 1791217445.0
-  },
-  {
-    "id": "t3_1wybky7",
-    "title": "[Hiring] [Remote] Software Engineers/Developers wanted for AI Training | $50+ USD / hr",
-    "subreddit": "AIJobs",
-    "permalink": "https://www.reddit.com/r/AIJobs/comments/1wybky7/hiring_remote_software_engineersdevelopers_wanted/",
-    "created_utc": 1791214314.0
   },
   {
     "id": "t3_1x0no9h",
@@ -446,20 +390,6 @@
     "subreddit": "RemotePython",
     "permalink": "https://www.reddit.com/r/remotepython/comments/1x0j1yc/looking_for_a_backend_developerpython_internship/",
     "created_utc": 1791438619.0
-  },
-  {
-    "id": "t3_1wygkkk",
-    "title": "[Full Remote] [FullRemote] AI/ML Developer & Python Engineer | Creator of bt-flow | FastAPI, MLOps, & Applied AI",
-    "subreddit": "RemotePython",
-    "permalink": "https://www.reddit.com/r/remotepython/comments/1wygkkk/full_remote_fullremote_aiml_developer_python/",
-    "created_utc": 1791225695.0
-  },
-  {
-    "id": "t3_1wyfeol",
-    "title": "Small work for a beginner in python",
-    "subreddit": "RemotePython",
-    "permalink": "https://www.reddit.com/r/remotepython/comments/1wyfeol/small_work_for_a_beginner_in_python/",
-    "created_utc": 1791223054.0
   },
   {
     "id": "t3_1x3am0o",
@@ -2651,5 +2581,19 @@
     "subreddit": "MachineLearningJobs",
     "permalink": "https://www.reddit.com/r/MachineLearningJobs/comments/1xlp9bs/please_review_my_computer_vision_resume/",
     "created_utc": 1793598589.0
+  },
+  {
+    "id": "t3_1xnt6gc",
+    "title": "[Hiring] AI 3D Animation Creator for Instagram Reels – Menstrual Health App",
+    "subreddit": "forhire",
+    "permalink": "https://www.reddit.com/r/forhire/comments/1xnt6gc/hiring_ai_3d_animation_creator_for_instagram/",
+    "created_utc": 1793810954.0
+  },
+  {
+    "id": "t3_1xnx22w",
+    "title": "[Hiring] [Remote] [US] - IT Product Manager (Remote);",
+    "subreddit": "techjobs",
+    "permalink": "https://www.reddit.com/r/techjobs/comments/1xnx22w/hiring_remote_us_it_product_manager_remote/",
+    "created_utc": 1793819697.0
   }
 ]
